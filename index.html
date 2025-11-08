@@ -111,8 +111,8 @@ document.addEventListener('DOMContentLoaded', function () {
     { name: 'There is a shared message to staff about what the ITRT does.', completed: false }
   ];
 
- localStorage.removeItem('itrt_admin_tasks');
-let tasks = [
+let tasks = JSON.parse(localStorage.getItem('itrt_admin_tasks')) || [
+
 
   function saveTasks() {
     localStorage.setItem('itrt_admin_tasks', JSON.stringify(tasks));
@@ -157,5 +157,6 @@ let tasks = [
 
 </body>
 </html>
+
 
 
