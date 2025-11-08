@@ -111,7 +111,8 @@ document.addEventListener('DOMContentLoaded', function () {
     { name: 'There is a shared message to staff about what the ITRT does.', completed: false }
   ];
 
-  let tasks = JSON.parse(localStorage.getItem('itrt_admin_tasks')) || structuredClone(defaultTasks);
+ localStorage.removeItem('itrt_admin_tasks');
+let tasks = [
 
   function saveTasks() {
     localStorage.setItem('itrt_admin_tasks', JSON.stringify(tasks));
@@ -156,4 +157,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
 </body>
 </html>
+
 
